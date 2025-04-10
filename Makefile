@@ -4,4 +4,4 @@ all:
 run:
 	./graph-tests
 
-try: all run
+try: all run 
