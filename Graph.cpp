@@ -60,7 +60,7 @@ void Graph::AddNode(nodekey_t key)
 	}
 
 
-	nodes.insert(key);
+	nodes.push_back(key);
 	vector <GraphEdge*> *newRow = new vector<GraphEdge*>;
 	adjList.push_back(*newRow);
 	//delete newRow; // ???????? ------------------------------------------------------------------?
@@ -95,6 +95,9 @@ const GraphEdge *Graph::AddEdge(nodekey_t gnFrom, nodekey_t gnTo, unsigned int w
 	// TODO:
 	// Do stuff here?  IDK what though
 
+
+
+
 	const GraphEdge *response = ge; // this helps the compiler go
 	return response;
 }
@@ -113,6 +116,7 @@ set<const GraphEdge*> Graph::GetOutwardEdgesFrom(nodekey_t node) const
 {
 	size_t idx = 0;
 	while(idx < this->nodes.size() && (this->nodes.at(idx) != node))
+	//for (nodekey_t node : this->nodes)
 	{
 		idx++;
 	}

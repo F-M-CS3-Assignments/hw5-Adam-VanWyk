@@ -63,7 +63,7 @@ class Graph{
 	private:
 		// TODO:
 		// put your code here!
-		set<nodekey_t> nodes;
+		vector<nodekey_t> nodes;
 		vector<vector<GraphEdge *>> adjList;
 
 
