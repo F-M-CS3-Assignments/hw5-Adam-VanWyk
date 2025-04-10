@@ -63,7 +63,7 @@ void Graph::AddNode(nodekey_t key)
 	nodes.push_back(key);
 	vector <GraphEdge*> *newRow = new vector<GraphEdge*>;
 	adjList.push_back(*newRow);
-	//delete newRow; // ???????? ------------------------------------------------------------------?
+	delete newRow; // ???????? ------------------------------------------------------------------?
 }
 
 
@@ -93,7 +93,7 @@ const GraphEdge *Graph::AddEdge(nodekey_t gnFrom, nodekey_t gnTo, unsigned int w
 	GraphEdge *ge = new GraphEdge;
 
 	// TODO:
-	// Do stuff here?  IDK what though
+	// find gnFrom and add to adjList to gnTo of weight w
 
 
 
@@ -107,6 +107,13 @@ bool Graph::IsPresent(nodekey_t key) const
 {
 	// TODO:
 	// iterate through this->nodes and look for one that matches key
+	for (nodekey_t node : this->nodes){
+		if (node == key){
+			return true;
+		}
+	}
+	return false;
+
 }
 
 
