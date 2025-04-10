@@ -63,8 +63,6 @@ class Graph{
 	private:
 		// TODO:
 		// put your code here!
-		map<nodekey_t, set<const GraphEdge*>> adjacencyList;
-		set<nodekey_t> nodes;
 
 
 	
