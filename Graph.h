@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <set>
+#include <map>
 #include <climits>
 
 
@@ -54,11 +55,18 @@ class Graph{
 
 		size_t Size() const; // num edges
 		size_t Order() const; // num nodes
+
+
+		map<nodekey_t, unsigned int> GetNeighbors(nodekey_t key) const;
 	
 	
 	private:
 		// TODO:
 		// put your code here!
+		map<nodekey_t, set<const GraphEdge*>> adjacencyList;
+		set<nodekey_t> nodes;
+
+
 	
 };
 
