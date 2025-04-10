@@ -29,7 +29,7 @@ const GraphEdge* findExistingEdge(nodekey_t gnFrom, nodekey_t gnTo, vector<vecto
 
 			// It might make sense for there to be an == operator overload in the GraphEdge struct
 			// but adding methods to a struct feels so _wrong_ to me!
-			if(cur->from == gnFrom && cur->to == gnTo)
+			if(cur->from == gnFrom && cur->to == gnTo) // if cur and gn are the same, have the same from and to.
 			{
 				return cur;
 			}
@@ -60,10 +60,10 @@ void Graph::AddNode(nodekey_t key)
 	}
 
 
-	nodes.push_back(key);
+	nodes.insert(key);
 	vector <GraphEdge*> *newRow = new vector<GraphEdge*>;
 	adjList.push_back(*newRow);
-	delete newRow; // ?
+	//delete newRow; // ???????? ------------------------------------------------------------------?
 }
 
 
