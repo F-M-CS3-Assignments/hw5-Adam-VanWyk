@@ -92,14 +92,21 @@ const GraphEdge *Graph::AddEdge(nodekey_t gnFrom, nodekey_t gnTo, unsigned int w
 
 	GraphEdge *ge = new GraphEdge;
 
-	// TODO:
-	// find gnFrom and add to adjList to gnTo of weight w
+	ge->from = gnFrom;
+	ge->to = gnTo;
+	ge->weight = w;
 
+	unsigned int index = 0;
+	for (size_t i = 0; i < nodes.size(); i++){
+		if (nodes[i] == gnFrom){
+			index = i;
+			break;
+		}
+	}
+	adjList.at(index).push_back(ge);
 
-
-
-	const GraphEdge *response = ge; // this helps the compiler go
-	return response;
+	//const GraphEdge *response = ge; // this helps the compiler go
+	return ge;
 }
 
 
