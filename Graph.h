@@ -18,6 +18,23 @@ using namespace std;
 #define nodekey_t unsigned long long int
 #define INVALID_NODE_KEY ULLONG_MAX
 
+struct BPQNode {
+	int pri = INT_MAX;
+	bool visited = false;
+	nodekey_t gnode = INVALID_NODE_KEY;
+	
+	bool operator<(const BPQNode &other) const {
+		return pri < other.pri;
+	}
+
+	bool operator>(const BPQNode &other) const {
+		return pri > other.pri;
+	}
+	
+	bool operator==(const BPQNode &other) const {
+		return this->gnode == other.gnode;
+	}
+};
 
 // when coding, be careful to ensure that every instance of
 // a GraphEdge is created on the heap
