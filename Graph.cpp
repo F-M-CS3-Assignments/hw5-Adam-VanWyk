@@ -138,12 +138,15 @@ set<const GraphEdge*> Graph::GetOutwardEdgesFrom(nodekey_t node) const
 		throw invalid_argument("No such node: " + to_string(node));
 	}
 
-
-
 	set<const GraphEdge*> result = set<const GraphEdge*>();
 	// TODO:
 	// iterate over this->adjList.at(idx); and find nodes that match the given node
 	// in their "from" field, put those nodes in result
+	for (size_t i = 0; i < this->adjList.at(idx).size(); i++){
+		if (this->adjList.at(idx).at(i)->from == node){
+			result.insert(this->adjList.at(idx).at(i));
+		}
+	}
 
 
 	return result;
