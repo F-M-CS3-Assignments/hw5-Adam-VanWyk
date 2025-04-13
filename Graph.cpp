@@ -152,10 +152,16 @@ set<const GraphEdge*> Graph::GetOutwardEdgesFrom(nodekey_t node) const
 	return result;
 }
 
- set<nodekey_t> Graph::GetNodes() const 
+set<nodekey_t> Graph::GetNodes() const 
 {
 	// TODOL
 	// iterate of this->nodes, accumulate into a set<nodekey_t> and return it
+	set<nodekey_t> result;
+
+	for (size_t i = 0; i < this->nodes.size(); i ++){
+		result.insert(this->nodes.at(i));
+	}
+	return result;
 }
 
 
