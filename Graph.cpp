@@ -237,5 +237,12 @@ Graph::~Graph() {
 	// TODO:
 	// Right now the memory leaks are bad, I need to
 	// implement something here to fix it
+	for (size_t i = 0; i < adjList.size(); i++){
+		for (size_t j = 0; j < adjList.at(i).size(); j++){
+			delete adjList[i][j];
+		}
+	}
+	adjList.clear();
+	nodes.clear();
 }
 
