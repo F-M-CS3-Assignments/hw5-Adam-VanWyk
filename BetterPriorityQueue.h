@@ -11,15 +11,15 @@ class BetterPriorityQueue : public priority_queue<BPQNode, vector<BPQNode>, grea
 public: 
 
     // Returns true if BPQNode is in the queue
-        bool contains(BPQNode);
+        bool Contains(BPQNode node);
 
     // Returns true if any changes are actually made,
     // tries to update the priority of a matching BPQNode in the queue
-        bool update(BPQNode);
+        bool Update(BPQNode node);
 
     //  Returns a string of the whole queue as seen in pdf
-        string ToString(vector<BPQNode>);
+        string ToString();
 
-        static string BPQNodeToString(BPQNode);
+        static string BPQNodeToString(BPQNode node);
 
 };
