@@ -7,10 +7,7 @@
 
 using namespace std;
 
-class BetterPriorityQueue {
-private: 
-    priority_queue<BPQNode, vector<BPQNode>, greater<BPQNode>> pq;
-
+class BetterPriorityQueue : public priority_queue<BPQNode, vector<BPQNode>, greater<BPQNode>> {
 public: 
 
     // Returns true if BPQNode is in the queue

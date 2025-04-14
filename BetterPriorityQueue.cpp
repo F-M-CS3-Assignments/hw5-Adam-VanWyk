@@ -5,9 +5,11 @@
 #include "BetterPriorityQueue.h"
 #include <vector>
 #include <queue>
+#include <string> 
 
 
 using namespace std;
+
 
     // Returns true if BPQNode is in the queue
 bool contains(BPQNode);
