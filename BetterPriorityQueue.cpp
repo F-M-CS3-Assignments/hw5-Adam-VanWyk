@@ -15,7 +15,7 @@ using namespace std;
 bool BetterPriorityQueue::Contains(BPQNode node){
     bool found = false;
     for (size_t i = 0; i < this->c.size(); i++){
-        if (node.pri == this->c.at(i).pri && node.gnode == this->c.at(i).gnode){
+        if (node.gnode == this->c.at(i).gnode){ //node.pri == this->c.at(i).pri && 
             found = true;
             break;
         }
@@ -26,16 +26,15 @@ bool BetterPriorityQueue::Contains(BPQNode node){
     // Returns true if any changes are actually made,
     // tries to update the priority of a matching BPQNode in the queue
 bool BetterPriorityQueue::Update(BPQNode node){
-    if(!Contains(node)){
-        return false;
-    } 
     bool found = false;
     int index;
-    for (size_t i = 0; i < this->c.size(); i++){ //const auto& item : this->c
-        if (this->c.at(i).gnode == node.gnode && this->c.at(i).pri >= node.pri){
-            found = true;
-            index = i;
-            break;
+    for (size_t i = 0; i < this->c.size(); i++){
+        if (this->c.at(i).gnode == node.gnode){
+            if(node.pri < this->c.at(i).pri){
+                found = true;
+                index = i;
+            }
+            break; // found node
         }
     }
     if (!found){return found;} // if there is no matching again, double check
