@@ -62,7 +62,5 @@ string BetterPriorityQueue::ToString(){
 }
 
 string BetterPriorityQueue::BPQNodeToString(BPQNode node){
-
-
-    return " ";
+    return "(" + to_string(node.gnode) + ", pri: " + to_string(node.pri) + ")";
 }

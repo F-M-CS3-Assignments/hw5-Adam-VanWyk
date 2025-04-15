@@ -82,6 +82,9 @@ void UpdateTest() {
 	assert(q.Update(positive) == true);
 	cout << "q after: " << q.ToString() << endl;
 
+	// string bpq_str = q.BPQNodeToString(positive);
+	// cout << "Testing BPQNode to string for positive " << bpq_str << endl;
+
 
 
 	// some students might have a slightly different order
